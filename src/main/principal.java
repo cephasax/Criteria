@@ -37,9 +37,9 @@ public class principal {
 		
 		
 		System.out.println();
-		System.out.println("---------------------------------------");
+		System.out.println("***************************************");
 		System.out.println("Todos os cursos com carga horaria maior que 3600:");
-		System.out.println("---------------------------------------");
+		System.out.println();
 
 		for(Curso c: CursoList){
 			System.out.println(c.getNomeCurso() + " = Carga horaria: " + c.getCargaHoraria());
@@ -47,7 +47,6 @@ public class principal {
 		System.out.println("---------------------------------------");
 		
 		//CONSULTA 2
-		
 		//Todos as turmas do periodo da tarde e noite
 		
 		CriteriaQuery<Turma> criteriaQuery2 = builder.createQuery(Turma.class);
@@ -64,19 +63,19 @@ public class principal {
 		List<Turma> turmasConsulta2 = query2.getResultList();
 
 		System.out.println();
-		System.out.println("---------------------------------------");
+		System.out.println("***************************************");
 		System.out.println("Todos as turmas do periodo vespertino e noturno:");
-		System.out.println("---------------------------------------");
+		System.out.println();
 
 		for(Turma turm: turmasConsulta2){
 			System.out.println("Turma: " + turm.getIdTurma()
 								+ " - data de inicio: " + turm.getDataInicio() 
 								+ " - data de termino: " + turm.getDataTermino());
 		}
+				
 		System.out.println("---------------------------------------");
 		
 		//CONSULTA 3
-		
 		//todas as turmas com situação = "Aberta" e	curso = "Ciência da Computação“;
 		
 		CriteriaQuery<Turma> criteriaQuery3 = builder.createQuery(Turma.class);
@@ -93,9 +92,9 @@ public class principal {
 		List<Turma> turmasConsulta3 = query3.getResultList();
 
 		System.out.println();
-		System.out.println("---------------------------------------");
+		System.out.println("***************************************");
 		System.out.println("Todos as turmas abertas do curso Ciencias da Computacao:");
-		System.out.println("---------------------------------------");
+		System.out.println();
 		for(Turma turm: turmasConsulta3){
 			System.out.println("Turma: " + turm.getIdTurma()
 								+ ", Curso: " + turm.getCurso().getNomeCurso()
@@ -103,7 +102,6 @@ public class principal {
 								+ " - data de termino: " + turm.getDataTermino());
 		}
 		System.out.println("---------------------------------------");
-		
 		
 		//CONSULTA 4
 		//todos os professores que lecionam no curso de "Bacharelado em Tecnologia da Informação“;
@@ -123,14 +121,15 @@ public class principal {
 		List<Professor> profsC4 = q4.getResultList();
 
 		System.out.println();
-		System.out.println("---------------------------------------");
+		System.out.println("***************************************");
 		System.out.println("Todos os professores do Bacharelado em Tecnologia da Informação");
-		System.out.println("---------------------------------------");
+		System.out.println();
 		for(Professor prof4: profsC4){
 			System.out.println(	"Professor: " + prof4.getNome()
 								 + ", matricula: " + prof4.getMatricula());
-		}
+		}		
 		System.out.println("---------------------------------------");
+
 		
 		//CONSULTA 5
 		//todos os  professores de turmas com periodo = Tarde e com cursos de carga horária > 4000
@@ -154,15 +153,15 @@ public class principal {
 		List<Professor> profsC5 = q5.getResultList();
 
 		System.out.println();
-		System.out.println("---------------------------------------");
+		System.out.println("***************************************");		
 		System.out.println("Todos os professores de turmas com periodo = Tarde e com cursos de carga horária > 4000");
-		System.out.println("---------------------------------------");
+		System.out.println();
 		for(Professor p5: profsC5){
 			System.out.println(	"Professor: " + p5.getNome()
 								 + ", matricula: " + p5.getMatricula());
 		}
 		System.out.println("---------------------------------------");
-		
+
 		
 		/*		
 		http://www.objectdb.com/java/jpa/query/jpql/logical
